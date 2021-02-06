@@ -1,0 +1,50 @@
+void cleanTheRoom()
+{
+    repeat (5)
+    {
+        clean();
+        left();
+        clean();
+        right();
+    }
+}
+
+void clean()
+{
+    repeat (10)
+    {
+        if (onBeeper())
+        {
+            pickBeeper();
+            if (frontIsClear())
+            {
+                moveForward();
+            }    
+        }
+        else if (frontIsClear())
+        {
+            moveForward();
+        }    
+    }
+    
+}
+
+void left()
+{
+    if(leftIsClear())
+    {
+        turnLeft();
+        moveForward();
+        turnLeft();
+    }
+}
+void right() 
+{
+    if(rightIsClear())
+    {
+        turnRight();
+        moveForward();
+        turnRight();
+        
+    }
+}
