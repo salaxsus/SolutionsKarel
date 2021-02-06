@@ -1,0 +1,18 @@
+void followTheSeeds()
+{
+    repeat (11)
+    {
+    pick();
+    }
+}
+
+void pick()
+{
+    while (beeperAhead())
+    {
+        moveForward();
+        pickBeeper();
+    }
+    turnLeft();
+    
+}
