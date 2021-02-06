@@ -1,0 +1,6 @@
+void decrement()
+{
+    dropBeeper();
+    moveForward();
+    pickBeeper();
+}
