@@ -1,0 +1,42 @@
+void saveTheFlowers()
+{
+    repeat(5)
+    {
+        save();
+    }
+    repeat(4)
+    {
+        plant();
+    }
+}
+
+void save()
+{
+    if(onBeeper())
+    {
+        pickBeeper();
+    }
+    
+    if (!frontIsClear())
+    {
+        turnLeft();
+        while (!rightIsClear())
+        {
+            moveForward();
+        }
+        turnRight();
+        moveForward();        
+    }
+}
+void plant()
+{
+    dropBeeper();
+    moveForward();
+    turnRight();
+    moveForward();
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnLeft();
+}
