@@ -1,0 +1,54 @@
+void quantize()
+{
+    repeat (10)
+    {
+        write();
+        turnLeft();
+        if(frontIsClear())
+        {
+            moveForward();
+        }
+    }
+}
+
+void write()
+{
+    turnLeft();
+    repeat (5)
+    {
+        moveForward();
+    }
+    if (onBeeper())
+    {
+        while (frontIsClear())
+        {
+            moveForward();
+            if(!onBeeper())
+            {
+                dropBeeper();
+                
+            }
+        }
+            turnAround();
+            while (frontIsClear())
+            {
+                moveForward();
+            }
+            
+            
+        }
+    
+    else
+    {
+        turnAround();
+        while (frontIsClear())
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                pickBeeper();           
+            }
+            
+        }
+    }
+}
