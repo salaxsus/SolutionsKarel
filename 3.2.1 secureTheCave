@@ -1,0 +1,62 @@
+//I pick the stalactites from bottom up
+
+void secureTheCave() {
+    while (frontIsClear()) {
+        start();
+        turnRight();
+        moveForward();
+    }
+    start();
+}
+
+void start() {
+    turnLeft();
+    secure();
+    
+}
+
+void secure() {
+    if (frontIsClear()) {
+        walkUp();
+        pick();
+    }
+    else
+    {
+   
+    }
+}
+
+void pick()
+{
+    if (onBeeper() && frontIsClear())
+    {
+        pickBeeper();
+        moveForward();
+        pick();            
+        
+    }
+    else
+    {
+        pickBeeper();
+        turnAround();
+        walkDown();
+        turnAround();
+    }
+    dropBeeper();
+    moveForward();
+}
+void walkUp()
+{
+    while (!onBeeper())
+    {
+        moveForward();
+    }
+}
+
+void walkDown()
+{
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+}
