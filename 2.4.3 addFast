@@ -1,5 +1,5 @@
 //The original programm cant´t show sum over 256
-//code is not optimized 
+//code is not optimized, maybe you can write it much cleane
 void addFast()
 {
     repeat (8)
