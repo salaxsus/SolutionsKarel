@@ -1,0 +1,26 @@
+
+void fetchTheStars() {
+    while (frontIsClear()) {
+        walk();
+        moveForward();
+    }
+    walk();
+}
+
+void walk() {
+    turnLeft();
+    fetch();
+    dropBeeper();
+    turnLeft();
+}
+
+void fetch() {
+    if (frontIsClear()) {
+        moveForward();
+        fetch();
+        moveForward();
+    } else {
+        pickBeeper();
+        turnAround();   
+    }
+}
