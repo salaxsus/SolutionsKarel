@@ -1,0 +1,25 @@
+void jumpTheHurdles()
+{
+    
+    while (!frontIsClear())
+    {
+        jump();
+    }
+}
+
+void jump()
+{
+    turnLeft();
+    while (!rightIsClear())
+    {
+        moveForward();
+    }
+    turnRight();
+    moveForward();
+    turnRight();
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnLeft();
+}
