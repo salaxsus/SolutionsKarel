@@ -1,0 +1,128 @@
+//The original programm cant´t show sum over 256
+//code is not optimized 
+void addFast()
+{
+    repeat (8)
+    {
+        add();
+    }
+    
+    
+}
+
+void add()
+{
+    if(onBeeper())
+    {
+        moveForward();
+        if (onBeeper())
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                moveForward();
+                dropBeeper();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                walking();
+            }
+            else
+            {
+                moveForward();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                walking();
+            }
+            
+        }
+        else
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                moveForward();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                walking();
+            }
+            else
+            {
+                moveForward();
+                dropBeeper();
+                turnRight();
+                moveForward();
+                turnRight();
+                walking();  
+            }
+            
+        }
+        
+    }
+    else
+    {
+        moveForward();
+        if (onBeeper())
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                moveForward();
+                turnRight();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                walking();
+            }
+            else
+            {
+                moveForward();
+                dropBeeper();
+                turnRight();
+                moveForward();
+                turnRight();
+                walking();
+            }
+        }
+        else
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                moveForward();
+                dropBeeper();
+                turnRight();
+                moveForward();
+                turnRight();
+                walking();
+            }
+            else
+            {
+                moveForward();
+                turnRight();
+                moveForward();
+                turnRight();
+                walking();
+            }
+        }
+    }
+}
+
+
+void walking()
+{
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnAround();
+}
