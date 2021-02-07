@@ -1,0 +1,26 @@
+//copy from: https://github.com/lukasnehrke/karel-solutions/tree/main/3.1.1%20partyAgain
+void partyAgain() {
+    while (frontIsClear()) {
+        column();
+        moveForward();
+    }
+    column();
+}
+
+void column() {
+    turnLeft();
+    pickBeeper();
+    walkAndPick();
+    turnLeft();
+}
+
+void walkAndPick() {
+    if (frontIsClear()) {
+        moveForward();
+        walkAndPick();
+        moveForward();
+    } else {
+        dropBeeper();
+        turnAround();   
+    }
+}
